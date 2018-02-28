@@ -3,7 +3,7 @@
     "promptValues": {
       "packageName": "rightchamps"
     },
-    "jhipsterVersion": "4.11.1",
+    "jhipsterVersion": "4.14.1",
     "baseName": "Layslip",
     "packageName": "rightchamps",
     "packageFolder": "rightchamps",
@@ -28,6 +28,8 @@
     "applicationType": "monolith",
     "testFrameworks": [],
     "jhiPrefix": "jhi",
-    "enableTranslation": false
+    "enableTranslation": false,
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true
   }
 }
