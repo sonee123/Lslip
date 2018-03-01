@@ -1,0 +1,56 @@
+
+<div *ngIf="workCode">
+    <h2><span>Work Code</span> {{workCode.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>User</span></dt>
+        <dd>
+            {{workCode.user?.firstName}}
+        </dd>
+        <dt><span>Wc Code 1</span></dt>
+        <dd>
+            <div *ngIf="workCode.wcCode1">
+                <a [routerLink]="['/work-center-master', workCode.wcCode1?.id]">{{workCode.wcCode1?.title}}</a>
+            </div>
+        </dd>
+        <dt><span>Wc Code 2</span></dt>
+        <dd>
+            <div *ngIf="workCode.wcCode2">
+                <a [routerLink]="['/work-center-master', workCode.wcCode2?.id]">{{workCode.wcCode2?.title}}</a>
+            </div>
+        </dd>
+        <dt><span>Wc Code 3</span></dt>
+        <dd>
+            <div *ngIf="workCode.wcCode3">
+                <a [routerLink]="['/work-center-master', workCode.wcCode3?.id]">{{workCode.wcCode3?.title}}</a>
+            </div>
+        </dd>
+        <dt><span>Wc Code 4</span></dt>
+        <dd>
+            <div *ngIf="workCode.wcCode4">
+                <a [routerLink]="['/work-center-master', workCode.wcCode4?.id]">{{workCode.wcCode4?.title}}</a>
+            </div>
+        </dd>
+        <dt><span>Wc Code 5</span></dt>
+        <dd>
+            <div *ngIf="workCode.wcCode5">
+                <a [routerLink]="['/work-center-master', workCode.wcCode5?.id]">{{workCode.wcCode5?.title}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'work-code/'+ workCode.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

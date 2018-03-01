@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity WorkCode.
+    -->
+    <changeSet id="20180228114246-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="work_code"
+                                 constraintName="fk_work_code_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="wc_code1_id"
+                                 baseTableName="work_code"
+                                 constraintName="fk_work_code_wc_code1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="work_center_master"/>
+
+        <addForeignKeyConstraint baseColumnNames="wc_code2_id"
+                                 baseTableName="work_code"
+                                 constraintName="fk_work_code_wc_code2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="work_center_master"/>
+
+        <addForeignKeyConstraint baseColumnNames="wc_code3_id"
+                                 baseTableName="work_code"
+                                 constraintName="fk_work_code_wc_code3_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="work_center_master"/>
+
+        <addForeignKeyConstraint baseColumnNames="wc_code4_id"
+                                 baseTableName="work_code"
+                                 constraintName="fk_work_code_wc_code4_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="work_center_master"/>
+
+        <addForeignKeyConstraint baseColumnNames="wc_code5_id"
+                                 baseTableName="work_code"
+                                 constraintName="fk_work_code_wc_code5_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="work_center_master"/>
+
+    </changeSet>
+</databaseChangeLog>

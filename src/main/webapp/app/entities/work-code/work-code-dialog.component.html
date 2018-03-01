@@ -1,0 +1,67 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myWorkCodeLabel">Create or edit a Work Code</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!workCode.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="workCode.id" readonly />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" [(ngModel)]="workCode.user" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="userOption.id === workCode.user?.id ? workCode.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.firstName}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_wcCode1">Wc Code 1</label>
+            <select class="form-control" id="field_wcCode1" name="wcCode1" [(ngModel)]="workCode.wcCode1" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="workCenterMasterOption.id === workCode.wcCode1?.id ? workCode.wcCode1 : workCenterMasterOption" *ngFor="let workCenterMasterOption of workcentermasters; trackBy: trackWorkCenterMasterById">{{workCenterMasterOption.title}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_wcCode2">Wc Code 2</label>
+            <select class="form-control" id="field_wcCode2" name="wcCode2" [(ngModel)]="workCode.wcCode2" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="workCenterMasterOption.id === workCode.wcCode2?.id ? workCode.wcCode2 : workCenterMasterOption" *ngFor="let workCenterMasterOption of workcentermasters; trackBy: trackWorkCenterMasterById">{{workCenterMasterOption.title}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_wcCode3">Wc Code 3</label>
+            <select class="form-control" id="field_wcCode3" name="wcCode3" [(ngModel)]="workCode.wcCode3" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="workCenterMasterOption.id === workCode.wcCode3?.id ? workCode.wcCode3 : workCenterMasterOption" *ngFor="let workCenterMasterOption of workcentermasters; trackBy: trackWorkCenterMasterById">{{workCenterMasterOption.title}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_wcCode4">Wc Code 4</label>
+            <select class="form-control" id="field_wcCode4" name="wcCode4" [(ngModel)]="workCode.wcCode4" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="workCenterMasterOption.id === workCode.wcCode4?.id ? workCode.wcCode4 : workCenterMasterOption" *ngFor="let workCenterMasterOption of workcentermasters; trackBy: trackWorkCenterMasterById">{{workCenterMasterOption.title}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_wcCode5">Wc Code 5</label>
+            <select class="form-control" id="field_wcCode5" name="wcCode5" [(ngModel)]="workCode.wcCode5" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="workCenterMasterOption.id === workCode.wcCode5?.id ? workCode.wcCode5 : workCenterMasterOption" *ngFor="let workCenterMasterOption of workcentermasters; trackBy: trackWorkCenterMasterById">{{workCenterMasterOption.title}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

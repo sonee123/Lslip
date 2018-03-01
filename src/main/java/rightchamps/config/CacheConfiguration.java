@@ -42,6 +42,20 @@ public class CacheConfiguration {
             cm.createCache(rightchamps.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(rightchamps.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(rightchamps.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(rightchamps.domain.Layslipheader.class.getName(), jcacheConfiguration);
+            cm.createCache(rightchamps.domain.LayslipRollDetails.class.getName(), jcacheConfiguration);
+            cm.createCache(rightchamps.domain.LayslipGridDetails.class.getName(), jcacheConfiguration);
+            cm.createCache(rightchamps.domain.WorkCenterMaster.class.getName(), jcacheConfiguration);
+            cm.createCache(rightchamps.domain.WorkCode.class.getName(), jcacheConfiguration);
+            cm.createCache(rightchamps.domain.LayslipKeyHeader.class.getName(), jcacheConfiguration);
+            cm.createCache(rightchamps.domain.LayslipKeyHeader.class.getName() + ".workCodes", jcacheConfiguration);
+            cm.createCache(rightchamps.domain.WorkCode.class.getName() + ".wcCode1S", jcacheConfiguration);
+            cm.createCache(rightchamps.domain.WorkCode.class.getName() + ".wcCode2S", jcacheConfiguration);
+            cm.createCache(rightchamps.domain.WorkCode.class.getName() + ".wcCode3S", jcacheConfiguration);
+            cm.createCache(rightchamps.domain.WorkCode.class.getName() + ".wcCode4S", jcacheConfiguration);
+            cm.createCache(rightchamps.domain.WorkCode.class.getName() + ".wcCode5S", jcacheConfiguration);
+            cm.createCache(rightchamps.domain.WorkCenterMaster.class.getName() + ".", jcacheConfiguration);
+            cm.createCache(rightchamps.domain.WorkCenterMaster.class.getName() + ".layslips", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

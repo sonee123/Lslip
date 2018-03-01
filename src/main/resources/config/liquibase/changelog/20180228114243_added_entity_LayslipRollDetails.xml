@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity LayslipRollDetails.
+    -->
+    <changeSet id="20180228114243-1" author="jhipster">
+        <createTable tableName="layslip_roll_details">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="po_no" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="com_material_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="roll_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="roll_qty" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="grade" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="shade" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="flat_start" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fitted_start" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pillow_start" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="flat_end" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fitted_end" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pillow_end" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="full_length" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="half_length" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="endbit_pcs" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_pillows" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pillow_prorata" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="rejected_fabric" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

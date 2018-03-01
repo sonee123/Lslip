@@ -1,0 +1,87 @@
+entity Layslipheader {
+ priority Integer,
+ poNo String,
+ materialNo String,
+ materialDesc String,
+ mainGrid String,
+ orderQty Integer,
+ remainingQty Integer,
+ plannedQty Integer,
+ layComponent String,
+ flat Integer,
+ fitted Integer,
+ pillow Integer,
+ flatMatCode String,
+ fittedMatCode String,
+ pillowMatCode String,
+ pillowGrid String,
+ flatToBeMade String,
+ fittedToBeMade String,
+ pillowToBeMade String,
+ flatWays Integer,
+ fittedWays Integer,
+ pillowWays Integer,
+ flatPiecesPerWay Integer,
+ fittedPiecesPerWay Integer,
+ pillowPiecesPerWay Integer
+ 
+}
+
+entity LayslipRollDetails {
+ poNo String,
+ comMaterialCode String,
+ rollNumber String,
+ rollQty Integer,
+ grade String,
+ shade String,
+ flatStart Integer,
+ fittedStart Integer,
+ pillowStart Integer,
+ flatEnd Integer
+ fittedEnd Integer,
+ pillowEnd Integer,
+ fullLength Integer,
+ halfLength Integer,
+ endbitPcs Integer,
+ estPillows Integer,
+ pillowProrata Integer,
+ rejectedFabric Integer
+}
+
+
+entity LayslipGridDetails {
+ laySlipNo String,
+ subLayslipNo String,
+ mainGrid String,
+ pillows Integer,
+ wastFabric Integer
+}
+
+
+entity WorkCenterMaster {
+ title String,
+}
+
+entity WorkCode{
+ 
+}
+
+entity LayslipKeyHeader{
+
+}
+
+relationship ManyToOne{
+ WorkCode{User(firstName)} to User
+ WorkCode{WcCode1(title)} to WorkCenterMaster,
+ WorkCode{WcCode2(title)} to WorkCenterMaster,
+ WorkCode{WcCode3(title)} to WorkCenterMaster,
+ WorkCode{WcCode4(title)} to WorkCenterMaster,
+ WorkCode{WcCode5(title)} to WorkCenterMaster,
+
+ LayslipKeyHeader{Layslipheader} to Layslipheader
+ LayslipKeyHeader{LayslipRoll} to LayslipRollDetails
+}
+
+relationship ManyToMany{
+	WorkCenterMaster{layslip} to LayslipKeyHeader
+}

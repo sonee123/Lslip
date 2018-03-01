@@ -1,0 +1,106 @@
+<div>
+    <h2>
+        <span>Layslipheaders</span>
+        <button class="btn btn-primary float-right jh-create-entity create-layslipheader" [routerLink]="['/', { outlets: { popup: ['layslipheader-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new Layslipheader
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="layslipheaders">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Priority</span></th>
+            <th><span>Po No</span></th>
+            <th><span>Material No</span></th>
+            <th><span>Material Desc</span></th>
+            <th><span>Main Grid</span></th>
+            <th><span>Order Qty</span></th>
+            <th><span>Remaining Qty</span></th>
+            <th><span>Planned Qty</span></th>
+            <th><span>Lay Component</span></th>
+            <th><span>Flat</span></th>
+            <th><span>Fitted</span></th>
+            <th><span>Pillow</span></th>
+            <th><span>Flat Mat Code</span></th>
+            <th><span>Fitted Mat Code</span></th>
+            <th><span>Pillow Mat Code</span></th>
+            <th><span>Pillow Grid</span></th>
+            <th><span>Flat To Be Made</span></th>
+            <th><span>Fitted To Be Made</span></th>
+            <th><span>Pillow To Be Made</span></th>
+            <th><span>Flat Ways</span></th>
+            <th><span>Fitted Ways</span></th>
+            <th><span>Pillow Ways</span></th>
+            <th><span>Flat Pieces Per Way</span></th>
+            <th><span>Fitted Pieces Per Way</span></th>
+            <th><span>Pillow Pieces Per Way</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let layslipheader of layslipheaders ;trackBy: trackId">
+                <td><a [routerLink]="['../layslipheader', layslipheader.id ]">{{layslipheader.id}}</a></td>
+                <td>{{layslipheader.priority}}</td>
+                <td>{{layslipheader.poNo}}</td>
+                <td>{{layslipheader.materialNo}}</td>
+                <td>{{layslipheader.materialDesc}}</td>
+                <td>{{layslipheader.mainGrid}}</td>
+                <td>{{layslipheader.orderQty}}</td>
+                <td>{{layslipheader.remainingQty}}</td>
+                <td>{{layslipheader.plannedQty}}</td>
+                <td>{{layslipheader.layComponent}}</td>
+                <td>{{layslipheader.flat}}</td>
+                <td>{{layslipheader.fitted}}</td>
+                <td>{{layslipheader.pillow}}</td>
+                <td>{{layslipheader.flatMatCode}}</td>
+                <td>{{layslipheader.fittedMatCode}}</td>
+                <td>{{layslipheader.pillowMatCode}}</td>
+                <td>{{layslipheader.pillowGrid}}</td>
+                <td>{{layslipheader.flatToBeMade}}</td>
+                <td>{{layslipheader.fittedToBeMade}}</td>
+                <td>{{layslipheader.pillowToBeMade}}</td>
+                <td>{{layslipheader.flatWays}}</td>
+                <td>{{layslipheader.fittedWays}}</td>
+                <td>{{layslipheader.pillowWays}}</td>
+                <td>{{layslipheader.flatPiecesPerWay}}</td>
+                <td>{{layslipheader.fittedPiecesPerWay}}</td>
+                <td>{{layslipheader.pillowPiecesPerWay}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../layslipheader', layslipheader.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'layslipheader/'+ layslipheader.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'layslipheader/'+ layslipheader.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+
+<div *ngIf="layslipRollDetails">
+    <h2><span>Layslip Roll Details</span> {{layslipRollDetails.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Po No</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.poNo}}</span>
+        </dd>
+        <dt><span>Com Material Code</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.comMaterialCode}}</span>
+        </dd>
+        <dt><span>Roll Number</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.rollNumber}}</span>
+        </dd>
+        <dt><span>Roll Qty</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.rollQty}}</span>
+        </dd>
+        <dt><span>Grade</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.grade}}</span>
+        </dd>
+        <dt><span>Shade</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.shade}}</span>
+        </dd>
+        <dt><span>Flat Start</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.flatStart}}</span>
+        </dd>
+        <dt><span>Fitted Start</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.fittedStart}}</span>
+        </dd>
+        <dt><span>Pillow Start</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.pillowStart}}</span>
+        </dd>
+        <dt><span>Flat End</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.flatEnd}}</span>
+        </dd>
+        <dt><span>Fitted End</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.fittedEnd}}</span>
+        </dd>
+        <dt><span>Pillow End</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.pillowEnd}}</span>
+        </dd>
+        <dt><span>Full Length</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.fullLength}}</span>
+        </dd>
+        <dt><span>Half Length</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.halfLength}}</span>
+        </dd>
+        <dt><span>Endbit Pcs</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.endbitPcs}}</span>
+        </dd>
+        <dt><span>Est Pillows</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.estPillows}}</span>
+        </dd>
+        <dt><span>Pillow Prorata</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.pillowProrata}}</span>
+        </dd>
+        <dt><span>Rejected Fabric</span></dt>
+        <dd>
+            <span>{{layslipRollDetails.rejectedFabric}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'layslip-roll-details/'+ layslipRollDetails.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,122 @@
+
+<div *ngIf="layslipheader">
+    <h2><span>Layslipheader</span> {{layslipheader.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Priority</span></dt>
+        <dd>
+            <span>{{layslipheader.priority}}</span>
+        </dd>
+        <dt><span>Po No</span></dt>
+        <dd>
+            <span>{{layslipheader.poNo}}</span>
+        </dd>
+        <dt><span>Material No</span></dt>
+        <dd>
+            <span>{{layslipheader.materialNo}}</span>
+        </dd>
+        <dt><span>Material Desc</span></dt>
+        <dd>
+            <span>{{layslipheader.materialDesc}}</span>
+        </dd>
+        <dt><span>Main Grid</span></dt>
+        <dd>
+            <span>{{layslipheader.mainGrid}}</span>
+        </dd>
+        <dt><span>Order Qty</span></dt>
+        <dd>
+            <span>{{layslipheader.orderQty}}</span>
+        </dd>
+        <dt><span>Remaining Qty</span></dt>
+        <dd>
+            <span>{{layslipheader.remainingQty}}</span>
+        </dd>
+        <dt><span>Planned Qty</span></dt>
+        <dd>
+            <span>{{layslipheader.plannedQty}}</span>
+        </dd>
+        <dt><span>Lay Component</span></dt>
+        <dd>
+            <span>{{layslipheader.layComponent}}</span>
+        </dd>
+        <dt><span>Flat</span></dt>
+        <dd>
+            <span>{{layslipheader.flat}}</span>
+        </dd>
+        <dt><span>Fitted</span></dt>
+        <dd>
+            <span>{{layslipheader.fitted}}</span>
+        </dd>
+        <dt><span>Pillow</span></dt>
+        <dd>
+            <span>{{layslipheader.pillow}}</span>
+        </dd>
+        <dt><span>Flat Mat Code</span></dt>
+        <dd>
+            <span>{{layslipheader.flatMatCode}}</span>
+        </dd>
+        <dt><span>Fitted Mat Code</span></dt>
+        <dd>
+            <span>{{layslipheader.fittedMatCode}}</span>
+        </dd>
+        <dt><span>Pillow Mat Code</span></dt>
+        <dd>
+            <span>{{layslipheader.pillowMatCode}}</span>
+        </dd>
+        <dt><span>Pillow Grid</span></dt>
+        <dd>
+            <span>{{layslipheader.pillowGrid}}</span>
+        </dd>
+        <dt><span>Flat To Be Made</span></dt>
+        <dd>
+            <span>{{layslipheader.flatToBeMade}}</span>
+        </dd>
+        <dt><span>Fitted To Be Made</span></dt>
+        <dd>
+            <span>{{layslipheader.fittedToBeMade}}</span>
+        </dd>
+        <dt><span>Pillow To Be Made</span></dt>
+        <dd>
+            <span>{{layslipheader.pillowToBeMade}}</span>
+        </dd>
+        <dt><span>Flat Ways</span></dt>
+        <dd>
+            <span>{{layslipheader.flatWays}}</span>
+        </dd>
+        <dt><span>Fitted Ways</span></dt>
+        <dd>
+            <span>{{layslipheader.fittedWays}}</span>
+        </dd>
+        <dt><span>Pillow Ways</span></dt>
+        <dd>
+            <span>{{layslipheader.pillowWays}}</span>
+        </dd>
+        <dt><span>Flat Pieces Per Way</span></dt>
+        <dd>
+            <span>{{layslipheader.flatPiecesPerWay}}</span>
+        </dd>
+        <dt><span>Fitted Pieces Per Way</span></dt>
+        <dd>
+            <span>{{layslipheader.fittedPiecesPerWay}}</span>
+        </dd>
+        <dt><span>Pillow Pieces Per Way</span></dt>
+        <dd>
+            <span>{{layslipheader.pillowPiecesPerWay}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'layslipheader/'+ layslipheader.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

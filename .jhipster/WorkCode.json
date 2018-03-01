@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "firstName"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "wcCode1",
+            "otherEntityName": "workCenterMaster",
+            "otherEntityField": "title"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "wcCode2",
+            "otherEntityName": "workCenterMaster",
+            "otherEntityField": "title"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "wcCode3",
+            "otherEntityName": "workCenterMaster",
+            "otherEntityField": "title"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "wcCode4",
+            "otherEntityName": "workCenterMaster",
+            "otherEntityField": "title"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "wcCode5",
+            "otherEntityName": "workCenterMaster",
+            "otherEntityField": "title"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20180228114246",
+    "entityTableName": "work_code",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

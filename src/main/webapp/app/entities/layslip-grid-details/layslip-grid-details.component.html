@@ -1,0 +1,66 @@
+<div>
+    <h2>
+        <span>Layslip Grid Details</span>
+        <button class="btn btn-primary float-right jh-create-entity create-layslip-grid-details" [routerLink]="['/', { outlets: { popup: ['layslip-grid-details-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new Layslip Grid Details
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="layslipGridDetails">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Lay Slip No</span></th>
+            <th><span>Sub Layslip No</span></th>
+            <th><span>Main Grid</span></th>
+            <th><span>Pillows</span></th>
+            <th><span>Wast Fabric</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let layslipGridDetails of layslipGridDetails ;trackBy: trackId">
+                <td><a [routerLink]="['../layslip-grid-details', layslipGridDetails.id ]">{{layslipGridDetails.id}}</a></td>
+                <td>{{layslipGridDetails.laySlipNo}}</td>
+                <td>{{layslipGridDetails.subLayslipNo}}</td>
+                <td>{{layslipGridDetails.mainGrid}}</td>
+                <td>{{layslipGridDetails.pillows}}</td>
+                <td>{{layslipGridDetails.wastFabric}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../layslip-grid-details', layslipGridDetails.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'layslip-grid-details/'+ layslipGridDetails.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'layslip-grid-details/'+ layslipGridDetails.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

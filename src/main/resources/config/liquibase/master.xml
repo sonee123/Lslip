@@ -5,6 +5,17 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180228114242_added_entity_Layslipheader.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180228114243_added_entity_LayslipRollDetails.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180228114244_added_entity_LayslipGridDetails.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180228114245_added_entity_WorkCenterMaster.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180228114246_added_entity_WorkCode.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180228114247_added_entity_LayslipKeyHeader.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180228114242_added_entity_constraints_Layslipheader.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180228114243_added_entity_constraints_LayslipRollDetails.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180228114246_added_entity_constraints_WorkCode.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180228114247_added_entity_constraints_LayslipKeyHeader.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180228114245_added_entity_constraints_WorkCenterMaster.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

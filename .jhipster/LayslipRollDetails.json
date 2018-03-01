@@ -1,0 +1,84 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "poNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "comMaterialCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rollNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rollQty",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "grade",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shade",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "flatStart",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fittedStart",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "pillowStart",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "flatEnd",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fittedEnd",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "pillowEnd",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fullLength",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "halfLength",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "endbitPcs",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "estPillows",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "pillowProrata",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "rejectedFabric",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180228114243",
+    "entityTableName": "layslip_roll_details",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

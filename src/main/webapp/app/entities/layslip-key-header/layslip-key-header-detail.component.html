@@ -1,0 +1,34 @@
+
+<div *ngIf="layslipKeyHeader">
+    <h2><span>Layslip Key Header</span> {{layslipKeyHeader.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Layslipheader</span></dt>
+        <dd>
+            <div *ngIf="layslipKeyHeader.layslipheader">
+                <a [routerLink]="['/layslipheader', layslipKeyHeader.layslipheader?.id]">{{layslipKeyHeader.layslipheader?.id}}</a>
+            </div>
+        </dd>
+        <dt><span>Layslip Roll</span></dt>
+        <dd>
+            <div *ngIf="layslipKeyHeader.layslipRoll">
+                <a [routerLink]="['/layslip-roll-details', layslipKeyHeader.layslipRoll?.id]">{{layslipKeyHeader.layslipRoll?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'layslip-key-header/'+ layslipKeyHeader.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,115 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myLayslipRollDetailsLabel">Create or edit a Layslip Roll Details</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!layslipRollDetails.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="layslipRollDetails.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_poNo">Po No</label>
+            <input type="text" class="form-control" name="poNo" id="field_poNo"
+                [(ngModel)]="layslipRollDetails.poNo" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_comMaterialCode">Com Material Code</label>
+            <input type="text" class="form-control" name="comMaterialCode" id="field_comMaterialCode"
+                [(ngModel)]="layslipRollDetails.comMaterialCode" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_rollNumber">Roll Number</label>
+            <input type="text" class="form-control" name="rollNumber" id="field_rollNumber"
+                [(ngModel)]="layslipRollDetails.rollNumber" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_rollQty">Roll Qty</label>
+            <input type="number" class="form-control" name="rollQty" id="field_rollQty"
+                [(ngModel)]="layslipRollDetails.rollQty" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_grade">Grade</label>
+            <input type="text" class="form-control" name="grade" id="field_grade"
+                [(ngModel)]="layslipRollDetails.grade" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_shade">Shade</label>
+            <input type="text" class="form-control" name="shade" id="field_shade"
+                [(ngModel)]="layslipRollDetails.shade" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_flatStart">Flat Start</label>
+            <input type="number" class="form-control" name="flatStart" id="field_flatStart"
+                [(ngModel)]="layslipRollDetails.flatStart" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_fittedStart">Fitted Start</label>
+            <input type="number" class="form-control" name="fittedStart" id="field_fittedStart"
+                [(ngModel)]="layslipRollDetails.fittedStart" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_pillowStart">Pillow Start</label>
+            <input type="number" class="form-control" name="pillowStart" id="field_pillowStart"
+                [(ngModel)]="layslipRollDetails.pillowStart" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_flatEnd">Flat End</label>
+            <input type="number" class="form-control" name="flatEnd" id="field_flatEnd"
+                [(ngModel)]="layslipRollDetails.flatEnd" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_fittedEnd">Fitted End</label>
+            <input type="number" class="form-control" name="fittedEnd" id="field_fittedEnd"
+                [(ngModel)]="layslipRollDetails.fittedEnd" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_pillowEnd">Pillow End</label>
+            <input type="number" class="form-control" name="pillowEnd" id="field_pillowEnd"
+                [(ngModel)]="layslipRollDetails.pillowEnd" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_fullLength">Full Length</label>
+            <input type="number" class="form-control" name="fullLength" id="field_fullLength"
+                [(ngModel)]="layslipRollDetails.fullLength" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_halfLength">Half Length</label>
+            <input type="number" class="form-control" name="halfLength" id="field_halfLength"
+                [(ngModel)]="layslipRollDetails.halfLength" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_endbitPcs">Endbit Pcs</label>
+            <input type="number" class="form-control" name="endbitPcs" id="field_endbitPcs"
+                [(ngModel)]="layslipRollDetails.endbitPcs" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_estPillows">Est Pillows</label>
+            <input type="number" class="form-control" name="estPillows" id="field_estPillows"
+                [(ngModel)]="layslipRollDetails.estPillows" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_pillowProrata">Pillow Prorata</label>
+            <input type="number" class="form-control" name="pillowProrata" id="field_pillowProrata"
+                [(ngModel)]="layslipRollDetails.pillowProrata" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_rejectedFabric">Rejected Fabric</label>
+            <input type="number" class="form-control" name="rejectedFabric" id="field_rejectedFabric"
+                [(ngModel)]="layslipRollDetails.rejectedFabric" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

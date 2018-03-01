@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity WorkCenterMaster.
+    -->
+    <changeSet id="20180228114245-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="work_center_masters_id"
+                                 baseTableName="work_center_master_layslip"
+                                 constraintName="fk_work_center_master_layslip_work_center_masters_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="work_center_master"/>
+        <addForeignKeyConstraint baseColumnNames="layslips_id"
+                                 baseTableName="work_center_master_layslip"
+                                 constraintName="fk_work_center_master_layslip_layslips_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="layslip_key_header"/>
+        
+    </changeSet>
+</databaseChangeLog>

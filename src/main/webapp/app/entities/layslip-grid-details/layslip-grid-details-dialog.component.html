@@ -1,0 +1,50 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myLayslipGridDetailsLabel">Create or edit a Layslip Grid Details</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!layslipGridDetails.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="layslipGridDetails.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_laySlipNo">Lay Slip No</label>
+            <input type="text" class="form-control" name="laySlipNo" id="field_laySlipNo"
+                [(ngModel)]="layslipGridDetails.laySlipNo" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_subLayslipNo">Sub Layslip No</label>
+            <input type="text" class="form-control" name="subLayslipNo" id="field_subLayslipNo"
+                [(ngModel)]="layslipGridDetails.subLayslipNo" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_mainGrid">Main Grid</label>
+            <input type="text" class="form-control" name="mainGrid" id="field_mainGrid"
+                [(ngModel)]="layslipGridDetails.mainGrid" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_pillows">Pillows</label>
+            <input type="number" class="form-control" name="pillows" id="field_pillows"
+                [(ngModel)]="layslipGridDetails.pillows" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_wastFabric">Wast Fabric</label>
+            <input type="number" class="form-control" name="wastFabric" id="field_wastFabric"
+                [(ngModel)]="layslipGridDetails.wastFabric" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

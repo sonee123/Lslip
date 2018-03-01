@@ -1,0 +1,92 @@
+<div>
+    <h2>
+        <span>Layslip Roll Details</span>
+        <button class="btn btn-primary float-right jh-create-entity create-layslip-roll-details" [routerLink]="['/', { outlets: { popup: ['layslip-roll-details-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new Layslip Roll Details
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="layslipRollDetails">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Po No</span></th>
+            <th><span>Com Material Code</span></th>
+            <th><span>Roll Number</span></th>
+            <th><span>Roll Qty</span></th>
+            <th><span>Grade</span></th>
+            <th><span>Shade</span></th>
+            <th><span>Flat Start</span></th>
+            <th><span>Fitted Start</span></th>
+            <th><span>Pillow Start</span></th>
+            <th><span>Flat End</span></th>
+            <th><span>Fitted End</span></th>
+            <th><span>Pillow End</span></th>
+            <th><span>Full Length</span></th>
+            <th><span>Half Length</span></th>
+            <th><span>Endbit Pcs</span></th>
+            <th><span>Est Pillows</span></th>
+            <th><span>Pillow Prorata</span></th>
+            <th><span>Rejected Fabric</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let layslipRollDetails of layslipRollDetails ;trackBy: trackId">
+                <td><a [routerLink]="['../layslip-roll-details', layslipRollDetails.id ]">{{layslipRollDetails.id}}</a></td>
+                <td>{{layslipRollDetails.poNo}}</td>
+                <td>{{layslipRollDetails.comMaterialCode}}</td>
+                <td>{{layslipRollDetails.rollNumber}}</td>
+                <td>{{layslipRollDetails.rollQty}}</td>
+                <td>{{layslipRollDetails.grade}}</td>
+                <td>{{layslipRollDetails.shade}}</td>
+                <td>{{layslipRollDetails.flatStart}}</td>
+                <td>{{layslipRollDetails.fittedStart}}</td>
+                <td>{{layslipRollDetails.pillowStart}}</td>
+                <td>{{layslipRollDetails.flatEnd}}</td>
+                <td>{{layslipRollDetails.fittedEnd}}</td>
+                <td>{{layslipRollDetails.pillowEnd}}</td>
+                <td>{{layslipRollDetails.fullLength}}</td>
+                <td>{{layslipRollDetails.halfLength}}</td>
+                <td>{{layslipRollDetails.endbitPcs}}</td>
+                <td>{{layslipRollDetails.estPillows}}</td>
+                <td>{{layslipRollDetails.pillowProrata}}</td>
+                <td>{{layslipRollDetails.rejectedFabric}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../layslip-roll-details', layslipRollDetails.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'layslip-roll-details/'+ layslipRollDetails.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'layslip-roll-details/'+ layslipRollDetails.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

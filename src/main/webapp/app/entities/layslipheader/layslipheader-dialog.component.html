@@ -1,0 +1,150 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myLayslipheaderLabel">Create or edit a Layslipheader</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!layslipheader.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="layslipheader.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_priority">Priority</label>
+            <input type="number" class="form-control" name="priority" id="field_priority"
+                [(ngModel)]="layslipheader.priority" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_poNo">Po No</label>
+            <input type="text" class="form-control" name="poNo" id="field_poNo"
+                [(ngModel)]="layslipheader.poNo" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_materialNo">Material No</label>
+            <input type="text" class="form-control" name="materialNo" id="field_materialNo"
+                [(ngModel)]="layslipheader.materialNo" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_materialDesc">Material Desc</label>
+            <input type="text" class="form-control" name="materialDesc" id="field_materialDesc"
+                [(ngModel)]="layslipheader.materialDesc" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_mainGrid">Main Grid</label>
+            <input type="text" class="form-control" name="mainGrid" id="field_mainGrid"
+                [(ngModel)]="layslipheader.mainGrid" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_orderQty">Order Qty</label>
+            <input type="number" class="form-control" name="orderQty" id="field_orderQty"
+                [(ngModel)]="layslipheader.orderQty" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_remainingQty">Remaining Qty</label>
+            <input type="number" class="form-control" name="remainingQty" id="field_remainingQty"
+                [(ngModel)]="layslipheader.remainingQty" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_plannedQty">Planned Qty</label>
+            <input type="number" class="form-control" name="plannedQty" id="field_plannedQty"
+                [(ngModel)]="layslipheader.plannedQty" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_layComponent">Lay Component</label>
+            <input type="text" class="form-control" name="layComponent" id="field_layComponent"
+                [(ngModel)]="layslipheader.layComponent" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_flat">Flat</label>
+            <input type="number" class="form-control" name="flat" id="field_flat"
+                [(ngModel)]="layslipheader.flat" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_fitted">Fitted</label>
+            <input type="number" class="form-control" name="fitted" id="field_fitted"
+                [(ngModel)]="layslipheader.fitted" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_pillow">Pillow</label>
+            <input type="number" class="form-control" name="pillow" id="field_pillow"
+                [(ngModel)]="layslipheader.pillow" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_flatMatCode">Flat Mat Code</label>
+            <input type="text" class="form-control" name="flatMatCode" id="field_flatMatCode"
+                [(ngModel)]="layslipheader.flatMatCode" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_fittedMatCode">Fitted Mat Code</label>
+            <input type="text" class="form-control" name="fittedMatCode" id="field_fittedMatCode"
+                [(ngModel)]="layslipheader.fittedMatCode" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_pillowMatCode">Pillow Mat Code</label>
+            <input type="text" class="form-control" name="pillowMatCode" id="field_pillowMatCode"
+                [(ngModel)]="layslipheader.pillowMatCode" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_pillowGrid">Pillow Grid</label>
+            <input type="text" class="form-control" name="pillowGrid" id="field_pillowGrid"
+                [(ngModel)]="layslipheader.pillowGrid" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_flatToBeMade">Flat To Be Made</label>
+            <input type="text" class="form-control" name="flatToBeMade" id="field_flatToBeMade"
+                [(ngModel)]="layslipheader.flatToBeMade" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_fittedToBeMade">Fitted To Be Made</label>
+            <input type="text" class="form-control" name="fittedToBeMade" id="field_fittedToBeMade"
+                [(ngModel)]="layslipheader.fittedToBeMade" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_pillowToBeMade">Pillow To Be Made</label>
+            <input type="text" class="form-control" name="pillowToBeMade" id="field_pillowToBeMade"
+                [(ngModel)]="layslipheader.pillowToBeMade" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_flatWays">Flat Ways</label>
+            <input type="number" class="form-control" name="flatWays" id="field_flatWays"
+                [(ngModel)]="layslipheader.flatWays" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_fittedWays">Fitted Ways</label>
+            <input type="number" class="form-control" name="fittedWays" id="field_fittedWays"
+                [(ngModel)]="layslipheader.fittedWays" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_pillowWays">Pillow Ways</label>
+            <input type="number" class="form-control" name="pillowWays" id="field_pillowWays"
+                [(ngModel)]="layslipheader.pillowWays" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_flatPiecesPerWay">Flat Pieces Per Way</label>
+            <input type="number" class="form-control" name="flatPiecesPerWay" id="field_flatPiecesPerWay"
+                [(ngModel)]="layslipheader.flatPiecesPerWay" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_fittedPiecesPerWay">Fitted Pieces Per Way</label>
+            <input type="number" class="form-control" name="fittedPiecesPerWay" id="field_fittedPiecesPerWay"
+                [(ngModel)]="layslipheader.fittedPiecesPerWay" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_pillowPiecesPerWay">Pillow Pieces Per Way</label>
+            <input type="number" class="form-control" name="pillowPiecesPerWay" id="field_pillowPiecesPerWay"
+                [(ngModel)]="layslipheader.pillowPiecesPerWay" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

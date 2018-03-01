@@ -1,0 +1,112 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "priority",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "poNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "materialNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "materialDesc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mainGrid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orderQty",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "remainingQty",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "plannedQty",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "layComponent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "flat",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fitted",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "pillow",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "flatMatCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fittedMatCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pillowMatCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pillowGrid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "flatToBeMade",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fittedToBeMade",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pillowToBeMade",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "flatWays",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fittedWays",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "pillowWays",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "flatPiecesPerWay",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fittedPiecesPerWay",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "pillowPiecesPerWay",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180228114242",
+    "entityTableName": "layslipheader",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

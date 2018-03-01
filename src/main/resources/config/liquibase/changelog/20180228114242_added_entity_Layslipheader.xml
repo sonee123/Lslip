@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Layslipheader.
+    -->
+    <changeSet id="20180228114242-1" author="jhipster">
+        <createTable tableName="layslipheader">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="priority" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="po_no" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="material_no" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="material_desc" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="main_grid" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="order_qty" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="remaining_qty" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="planned_qty" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="lay_component" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="flat" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fitted" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pillow" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="flat_mat_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fitted_mat_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pillow_mat_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pillow_grid" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="flat_to_be_made" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fitted_to_be_made" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pillow_to_be_made" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="flat_ways" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fitted_ways" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pillow_ways" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="flat_pieces_per_way" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fitted_pieces_per_way" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pillow_pieces_per_way" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

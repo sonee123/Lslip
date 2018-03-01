@@ -1,0 +1,90 @@
+<div>
+    <h2>
+        <span>Work Codes</span>
+        <button class="btn btn-primary float-right jh-create-entity create-work-code" [routerLink]="['/', { outlets: { popup: ['work-code-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new Work Code
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="workCodes">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>User</span></th>
+            <th><span>Wc Code 1</span></th>
+            <th><span>Wc Code 2</span></th>
+            <th><span>Wc Code 3</span></th>
+            <th><span>Wc Code 4</span></th>
+            <th><span>Wc Code 5</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let workCode of workCodes ;trackBy: trackId">
+                <td><a [routerLink]="['../work-code', workCode.id ]">{{workCode.id}}</a></td>
+                <td>
+                    {{workCode.user?.firstName}}
+                </td>
+                <td>
+                    <div *ngIf="workCode.wcCode1">
+                        <a [routerLink]="['../work-center-master', workCode.wcCode1?.id ]" >{{workCode.wcCode1?.title}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="workCode.wcCode2">
+                        <a [routerLink]="['../work-center-master', workCode.wcCode2?.id ]" >{{workCode.wcCode2?.title}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="workCode.wcCode3">
+                        <a [routerLink]="['../work-center-master', workCode.wcCode3?.id ]" >{{workCode.wcCode3?.title}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="workCode.wcCode4">
+                        <a [routerLink]="['../work-center-master', workCode.wcCode4?.id ]" >{{workCode.wcCode4?.title}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="workCode.wcCode5">
+                        <a [routerLink]="['../work-center-master', workCode.wcCode5?.id ]" >{{workCode.wcCode5?.title}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../work-code', workCode.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'work-code/'+ workCode.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'work-code/'+ workCode.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
