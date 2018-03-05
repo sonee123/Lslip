@@ -1,5 +1,4 @@
 entity Layslipheader {
- priority Integer,
  poNo String,
  materialNo String,
  materialDesc String,
@@ -49,9 +48,39 @@ entity LayslipRollDetails {
 }
 
 
+entity Spreading {
+ flatWays Integer,
+ fittedWays Integer,
+  flatPiecesPerWay Integer,
+ fittedPiecesPerWay Integer,
+ pillowPiecesPerWay Integer,
+ pillowWays Integer,
+ flatStart Integer,
+ flatEnd Integer,
+ fittedStart Integer,
+ fittedEnd Integer,
+ pillowStart Integer,
+ pillowEnd Integer,
+ fullLength String,
+ halfLength String,
+ Pieces  String,
+ estPillows Integer,
+ pillowProrata Integer,
+ rejectedFabric Integer
+ 
+}
+
+entity StartEndData {
+ flatStart Integer,
+ flatEnd Integer,
+ fittedStart Integer,
+ fittedEnd Integer,
+ pillowStart Integer,
+ pillowEnd Integer,
+}
+
+
 entity LayslipGridDetails {
- laySlipNo String,
- subLayslipNo String,
  mainGrid String,
  pillows Integer,
  wastFabric Integer
@@ -59,7 +88,7 @@ entity LayslipGridDetails {
 
 
 entity WorkCenterMaster {
- title String,
+ title String
 }
 
 entity WorkCode{
@@ -67,6 +96,9 @@ entity WorkCode{
 }
 
 entity LayslipKeyHeader{
+ laySlipNo String,
+ subLayslipNo String,
+ priority Integer
 
 }
 
@@ -76,12 +108,26 @@ relationship ManyToOne{
  WorkCode{WcCode2(title)} to WorkCenterMaster,
  WorkCode{WcCode3(title)} to WorkCenterMaster,
  WorkCode{WcCode4(title)} to WorkCenterMaster,
- WorkCode{WcCode5(title)} to WorkCenterMaster,
+ WorkCode{WcCode5(title)} to WorkCenterMaster
 
- LayslipKeyHeader{Layslipheader} to Layslipheader
- LayslipKeyHeader{LayslipRoll} to LayslipRollDetails
+ 
+ 
+
+
+
+
 }
 
 relationship ManyToMany{
-	WorkCenterMaster{layslip} to LayslipKeyHeader
+	WorkCenterMaster{layslip} to LayslipKeyHeader,
+	LayslipKeyHeader{Layslipheader} to Layslipheader,
+	Spreading{startEndData} to StartEndData
+
+	
+}
+
+relationship OneToOne{
+	Layslipheader{layslipRollDetails} to LayslipRollDetails,
+	LayslipRollDetails{spreading} to Spreading
+	
 }
