@@ -36,7 +36,7 @@ entity LayslipRollDetails {
  flatStart Integer,
  fittedStart Integer,
  pillowStart Integer,
- flatEnd Integer
+ flatEnd Integer,
  fittedEnd Integer,
  pillowEnd Integer,
  fullLength Integer,
@@ -51,16 +51,16 @@ entity LayslipRollDetails {
 entity Spreading {
  flatWays Integer,
  fittedWays Integer,
-  flatPiecesPerWay Integer,
+ flatPiecesPerWay Integer,
  fittedPiecesPerWay Integer,
  pillowPiecesPerWay Integer,
- pillowWays Integer,
  flatStart Integer,
  flatEnd Integer,
  fittedStart Integer,
  fittedEnd Integer,
  pillowStart Integer,
  pillowEnd Integer,
+ pillowWays Integer,
  fullLength String,
  halfLength String,
  Pieces  String,
@@ -68,15 +68,6 @@ entity Spreading {
  pillowProrata Integer,
  rejectedFabric Integer
  
-}
-
-entity StartEndData {
- flatStart Integer,
- flatEnd Integer,
- fittedStart Integer,
- fittedEnd Integer,
- pillowStart Integer,
- pillowEnd Integer,
 }
 
 
@@ -109,25 +100,17 @@ relationship ManyToOne{
  WorkCode{WcCode3(title)} to WorkCenterMaster,
  WorkCode{WcCode4(title)} to WorkCenterMaster,
  WorkCode{WcCode5(title)} to WorkCenterMaster
-
- 
- 
-
-
-
-
 }
 
 relationship ManyToMany{
 	WorkCenterMaster{layslip} to LayslipKeyHeader,
 	LayslipKeyHeader{Layslipheader} to Layslipheader,
-	Spreading{startEndData} to StartEndData
-
+	Layslipheader{RollDetails} to LayslipRollDetails{Header}
 	
 }
 
 relationship OneToOne{
-	Layslipheader{layslipRollDetails} to LayslipRollDetails,
+	
 	LayslipRollDetails{spreading} to Spreading
 	
 }
